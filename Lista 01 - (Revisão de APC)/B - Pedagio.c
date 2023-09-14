@@ -11,11 +11,8 @@ int main() {
     scanf("%d %d", &L, &D);
     scanf("%d %d", &K, &P);
 
-    for(int i = D; i <= L; i = i + D) {
-        total = total + P;
-        //printf("km = %d\n", i);
-    }
-    total += L;
+
+    total = (L * K) + ((L / D) * P);
     
     printf("%d\n", total);
     
