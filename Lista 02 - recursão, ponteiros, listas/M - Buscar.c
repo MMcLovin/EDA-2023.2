@@ -39,7 +39,7 @@ celula *busca_rec(celula *le, int x)
 }
 
 //testando as funções
-/*celula *criacelula(int x)
+celula *criacelula(int x)
 {
     celula *newcelula;
     newcelula = malloc(sizeof(celula));
@@ -89,4 +89,4 @@ int main()
     
     return 0;
 }
- */
+ 
