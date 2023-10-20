@@ -4,7 +4,6 @@
 typedef struct celula {
     int dado;
     struct celula *prox;
-    struct celula *ultimo;
 } celula;
 
 //nao tem como ter uma fila cheia na implementação com listas
