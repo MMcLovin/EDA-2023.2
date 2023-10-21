@@ -16,11 +16,10 @@ int desenfileira(fila *fila, int *y)
     {
         return 0;
     }
-    else
-    {
-        *y = fila->dados[fila->p];
-        fila->p++;
 
-        return 1;
-    }
+    *y = fila->dados[fila->p];
+    fila->p++;
+
+    return 1;
+    
 }
