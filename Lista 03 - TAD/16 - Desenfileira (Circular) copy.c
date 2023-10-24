@@ -23,7 +23,7 @@ int desenfileira(fila *f, int *y)
 
     return 1;
 }
-/*
+
 fila *criaFila(int p, int u, int N)
 {
     fila *f = malloc(sizeof(fila));
@@ -53,7 +53,6 @@ fila *criaFila(int p, int u, int N)
     }
 
     return f;
-
 }
 
 int imprimeFila(fila *f)
@@ -88,7 +87,7 @@ int imprimeFila(fila *f)
             }
             else
             {
-                printf("%d -> ", f->dados[i]);
+                printf("vazio -> ", f->dados[i]);
             }
         }
 
