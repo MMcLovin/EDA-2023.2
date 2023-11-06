@@ -54,7 +54,7 @@ void imprime_rec(celula *le)
     }
 }
 
-int acha_excedem_soma(int vet[], head *le, int i)
+int excedem_soma(int vet[], head *le, int i)
 {
     //o ultimo elemento do meu vetor sempre sera 0, quando chegamos nele, a funcao acaba
     if (vet[i] == 0)
@@ -73,7 +73,7 @@ int acha_excedem_soma(int vet[], head *le, int i)
     }
     
     //chamada recursiva para o proximo elemento 
-    return acha_excedem_soma(vet, le, i + 1);
+    return excedem_soma(vet, le, i + 1);
 }
 
 int main()
@@ -95,7 +95,7 @@ int main()
     //lista em que a cabeca guarda metadados uteis para o programa
     head *le = criaHead(0, limiteSoma);
 
-    acha_excedem_soma(vet, le, 0);
+    excedem_soma(vet, le, 0);
 
     imprime_rec(le->prox);
 
