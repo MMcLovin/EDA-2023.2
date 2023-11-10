@@ -6,7 +6,7 @@ int euNaoAguentoMaisPeloAmorDeDeus(char texto[], char sub[], int vetPos[])
     //guarda o ponteiro que aponta para o primeiro pedaco de texto[] que contem sub[]
     char *temp = (strstr(texto, sub));
 
-    //strstr retorna NULL e podemos parar a execuчуo
+    //strstr retorna NULL e podemos parar a execucao
     if (temp == NULL)
     {
         vetPos[2] = vetPos[1] + strlen(sub);
@@ -17,7 +17,7 @@ int euNaoAguentoMaisPeloAmorDeDeus(char texto[], char sub[], int vetPos[])
         //indice de onde comeca a minha ocorrencia no meu novoTexto/texto
         int indice = temp - texto;
 
-        //determina se eh ou nao a primeira vez que a funcao eh executada
+        //guarda a posicao de inicio da ocorrencia e tmb determina se eh ou nao a primeira vez que a funcao eh executada
         if (vetPos[0] == -1)
         {
             vetPos[0] = indice;
@@ -55,13 +55,14 @@ int main()
     //v[2] = fim da ocorrencia
     int vetPos[3] = {-1, 0, 0};
 
-    if (strLen >= subLen && (str[0] != ' ' || sub[0] != ' ') && (subLen + strLen > 1))
+    if (strLen >= subLen && (subLen + strLen > 1))
     {
         euNaoAguentoMaisPeloAmorDeDeus(str, sub, vetPos);
     }
 
     int maiorSub = 0;
-    //vetPos[0] nao foi alterado, entao ou sub nao esta contida em str
+
+    //vetPos[0] nao foi alterado ou sub nao esta contida em str
     if (vetPos[0] == vetPos[1])
     {
         maiorSub = subLen - 1;
