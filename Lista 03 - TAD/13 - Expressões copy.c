@@ -44,6 +44,15 @@ int isVazia(pilha *p)
     return 0;
 }
 
+int imprimeResultado(char resultados[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        //printf("%d - %c\n", i, resultados[i]);
+        printf("%c\n",resultados[i]);
+    }
+}
+
 int main()
 {
     int tamanho = 100002;
@@ -52,7 +61,6 @@ int main()
     semiCadeias->N = tamanho;
     semiCadeias->topo = 0;
 
-    char bemDefinida = 'S';
     int linhas;
     scanf("%d", &linhas);
     getchar();
@@ -61,9 +69,12 @@ int main()
     {
         linhas = 0;
     }
+    
+    char resultado[linhas];
 
     for (int i = 0; i < linhas; i++)
     {
+        char bemDefinida = 'S';
         char texto[100001] = "";
 
         fgets(texto, sizeof(texto), stdin);
@@ -94,10 +105,42 @@ int main()
         //se todas as cadeias que foram abertas, também forem fechadas, a pilha estará vazia
         if (!(isVazia(semiCadeias))) bemDefinida = 'N';
         
-        printf("%c\n", bemDefinida);
+        resultado[i] = bemDefinida;
 
         semiCadeias->topo = 0;
     }
 
+    imprimeResultado(resultado, linhas);
+
     return 0;
 }
+/*
+    sim
+1 - ()
+2 - []
+3 - {}
+4 - ([{}])
+5 - {}()[]
+6 - (([{}{}()[]])(){}){}
+()
+[]
+{}
+([{}])
+{}()[]
+(([{}{}()[]])(){}){}
+*/
+/*
+    nao
+1 - (]
+2 - }{
+3 - ()]
+4 - {[]
+5 - (
+6 - (((((((((({([])}])))))))))
+(]
+}{
+()]
+{[]
+(
+(((((((((({([])}])))))))))
+*/
