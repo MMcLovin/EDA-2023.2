@@ -2,25 +2,23 @@
 #include <stdlib.h>
 #define N 1000
 
-int bubbleSort(int *v, int i)
+//left = first element index
+//right = last element index
+int bubbleSort(int *v, int left, int right)
 {
     int flag = 1;
 
-    while (flag)
+    for (; right > left && flag; right--)
     {
-        flag = 0;
-
-        for (int j = 0; j + 1 < i; j++)
+        for (int i = left; i < right; i++)
         {
-            if (v[j] > v[j + 1])
+            if (v[i] > v[i + 1])
             {
-                int aux = v[j];
-                v[j] = v[j + 1];
-                v[j + 1] = aux;
-                flag++;
+                int aux = v[i];
+                v[i] = v[i + 1];
+                v[i + 1] = aux;
             }
         }
-        if (flag != 0) flag = 1;
     }
 
     return 0;
@@ -37,7 +35,7 @@ int main()
         vet[i++] = elemento;
     }
 
-    bubbleSort(vet, i);
+    bubbleSort(vet, 0, i - 1);
 
     for (int j = 0; j < i; j++)
     {
